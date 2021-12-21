@@ -1,0 +1,15 @@
+Windows:
+
+  After installing from the rust-lang website, use Powershell and an editor like Notepad++ to write a few simple files.
+  Powershell
+    use the New-Item command to create a file
+    then edit from File Explorer with NPP, save it with .rs extension
+    use rustc in Powershell to compile
+    This produces a .exe file
+    run this file with ./blah.exe
+    
+    Example:
+    
+    New-Item helloworld.rs
+    rustc helloworld.rs
+    ./helloworld.exe
