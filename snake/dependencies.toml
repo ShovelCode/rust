@@ -1,0 +1,3 @@
+[dependencies]
+crossterm = "0.21.0"
+rand = "0.8.4"
