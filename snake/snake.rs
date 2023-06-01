@@ -121,3 +121,26 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     disable_raw_mode()?;
     Ok(())
+}
+
+fn draw(stdout: &mut std::io::Stdout, game: &Game) -> Result<(), Box<dyn std::error::Error>> {
+    use crossterm::cursor::{MoveTo, Show};
+    stdout.execute(MoveTo(0, 0))?;
+    for y in 0..HEIGHT {
+        for x in 0..WIDTH {
+            let point = Point { x: x as i32, y: y as i32 };
+            if game.snake.contains(&point) {
+                print!("#");
+            } else if point.x == game.food.x && point.y == game.food.y {
+                print!("*");
+            } else {
+                print!(" ");
+            }
+        }
+        println!();
+    }
+    stdout.execute(Show)?;
+    Ok(())
+}
+
+
