@@ -1,0 +1,9 @@
+In this code, rot13 is a function that takes a string reference as an argument and returns a new string. The chars function is called on the string to create an iterator over the characters of the string.
+
+The map function is then called on this iterator to create a new iterator that yields the Rot13 substitution of each character. The match statement inside the map function performs the actual substitution.
+
+In the match statement, ranges of characters are used to match uppercase and lowercase letters. The as u8 and as char casts are used to add or subtract 13 from the ASCII value of each character.
+
+Finally, the collect function is called to convert the iterator of characters back into a string.
+
+Note that this implementation leaves non-alphabetic characters unchanged.
